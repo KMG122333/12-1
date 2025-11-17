@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct profile{
+char name[20];
+int age;
+double grade;
+char *intro;
+};
+
+int main(){
+    struct profile min;
+
+    strcpy(min.name, "김민재");
+    min.age = 26;
+    min.grade = 4;
+
+    min.intro = (char *)malloc(80);
+    printf("자기소개: ");
+    gets(min.intro);
+
+    printf("이름: %s\n", min.name);
+    printf("나이: %d\n", min.age);
+    printf("학년: %.1lf학년\n", min.grade);
+    printf("자기소개: %s\n", min.intro);
+    free(min.intro);
+
+    return 0;
+}
